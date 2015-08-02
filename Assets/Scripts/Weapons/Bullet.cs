@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour {
 	public Rigidbody 	projectile;			// Will require a rigidbody prefab to act as a prejectile.  
 	public float 		speed;				// Sets the objects speed travelling away from the spawn
 	public AudioClip	SFX;				// Add a desired sound effect
-	AudioSource 		audio;
+	new AudioSource 		audio;
 
 	// Use this for initialization
 	void Start () {
