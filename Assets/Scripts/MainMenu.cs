@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour {
 
 	public string gameTitle			= "";		// Game Title
 	public string Version;						// Allows manual setting of the Version Number in the Inspector
+	public Texture title;						// Image for Title Screen or new title texture
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +38,7 @@ public class MainMenu : MonoBehaviour {
 	void OnGUI () {
 		GUI.skin = gameSkin;
 
-		GUI.Label(new Rect(30, 75, 300, 25), gameTitle, "Menu Title");
+		GUI.DrawTexture(new Rect(Screen.width / 2 - 50, 10, 350, 200), title);
 
 		FirstMenu ();
 		NewGameOptions();
