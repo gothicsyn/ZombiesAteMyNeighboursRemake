@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour {
 	private bool _isOptionsMenu 	= false;	// Sets the system to read Options Menu
 	private bool _isUpdate 			= false;	// Sets the system to read Update System
 	private bool _isNewGameMenu		= false;	// Will access new game options
+	private bool _isOnlineGame		= false;	// Will access the online components
 
 	private string _playerName		= "";		// Sets the Player Name
 	private string _playerGender	= "";		// Sets gender
@@ -42,6 +43,7 @@ public class MainMenu : MonoBehaviour {
 
 		FirstMenu ();
 		NewGameOptions();
+		OnlineGame();
 		LoadGameMenu ();
 		LevelSelectMenu ();
 		OptionsMenu ();
@@ -49,14 +51,15 @@ public class MainMenu : MonoBehaviour {
 		displayVersion();
 
 		// Will allow the user to return to the Main Menu from any other menu screen
-		if(_isLevelSelect == true || _isNewGameMenu == true ||_isLoadGame == true || _isOptionsMenu == true || _isUpdate == true) {
+		if(_isLevelSelect == true || _isNewGameMenu == true || _isOnlineGame == true || _isLoadGame == true || _isOptionsMenu == true || _isUpdate == true) {
 			if(GUI.Button(new Rect(10, Screen.height - 35, 150, 25), "Main Menu")){
 				_isLevelSelect 	= false;
 				_isLoadGame 	= false;
 				_isOptionsMenu	= false;
 				_isUpdate		= false;
 				_isNewGameMenu	= false;
-
+				_isOnlineGame 	= false;
+				
 				_isFirstMenu	= true;
 			}
 		}
@@ -76,27 +79,33 @@ public class MainMenu : MonoBehaviour {
 			_isLoadGame = true;
 		}
 
+		// Will switch to Online Menu and run relevant checks.
+		if(GUI.Button(new Rect(10, Screen.height / 2 - 50, 150, 25), "Online Co-Op")){
+			_isFirstMenu = false;
+			_isUpdate = true;
+		}
+		
 		// Will switch to Level Select Menu and run relevant checks.
-		if(GUI.Button(new Rect(10, Screen.height / 2 - 50, 150, 25), "Level Select")){
+		if(GUI.Button(new Rect(10, Screen.height / 2 - 25, 150, 25), "Level Select")){
 			_isFirstMenu = false;
 			_isLevelSelect = true;
 		}
 
 		// Will switch to Options and allow changing of visual and audio options saving them to file to be installed .
 		// globally.
-		if(GUI.Button(new Rect(10, Screen.height / 2 - 25, 150, 25), "Options")){
+		if(GUI.Button(new Rect(10, Screen.height / 2 + 0, 150, 25), "Options")){
 			_isFirstMenu = false;
 			_isOptionsMenu = true;
 		}
 
 		// Will switch to Update Game Menu and run relevant checks for a new or updated game version.
-		if(GUI.Button(new Rect(10, Screen.height / 2 + 0, 150, 25), "Update Game")){
+		if(GUI.Button(new Rect(10, Screen.height / 2 + 25, 150, 25), "Update Game")){
 			_isFirstMenu = false;
 			_isUpdate = true;
 		}
 
 		// Quits the game application completely.
-		if(GUI.Button(new Rect(10, Screen.height / 2 + 25, 150, 25), "Quit Game")){
+		if(GUI.Button(new Rect(10, Screen.height / 2 + 50, 150, 25), "Quit Game")){
 			Application.Quit();
 		}
 	}
@@ -128,6 +137,16 @@ public class MainMenu : MonoBehaviour {
 			}
 		}
 
+	// Function to display the Load Game Menu and Options
+	public void OnlineGame () {
+		if(_isOnlineGame) {
+			GUI.Label(new Rect(30, Screen.height / 2 - 200, 200, 50), "Online Options", "Sub Menu Title");
+
+			if(GUI.Button(new Rect(10, Screen.height / 2 - 100, 200, 150), "Start Online Game")){
+				Application.LoadLevel("Online");
+			}
+		}
+	}
 
 	// Function to display the Load Game Menu and Options
 	public void LoadGameMenu () {
