@@ -1,0 +1,24 @@
+// Devils Inc Studios
+// Copyright DEVILS INC. STUDIOS LIMITED 2014, 2015
+//
+// Enum of all the different cheats in the game
+//
+
+public enum Cheat
+{
+	INFINITE_HEALTH,
+	INFINITE_AMMO,
+	INFINITE_FUEL,
+	INFINITE_SHIELD,
+	MAX_CREDITS,
+	MAX_LEVEL,
+	MAX_FUEL,
+	MAX_HEALTH,
+	MAX_SHIELDS,
+	MAX_SPEED,
+	UNLOCK_ALL_SHIPS,
+	UNLOCK_ALL_LEVELS,
+	UNLOCK_ALL_WEAPONS,
+	NO_CLIP,
+	NO_TARGET,
+}

@@ -7,7 +7,6 @@
 [Ss]tandard Assets/
 [Tt]errain Assets
 [Pp]lugins
-[Pp]refabs
 [Mm]odels
 [Aa]udio
 $tf/
@@ -30,3 +29,8 @@ $tf/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+Assets/Externals/
+*.mat
+*.ini
+*.png
+*.DS_Store
