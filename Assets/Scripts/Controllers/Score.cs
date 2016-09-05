@@ -7,6 +7,7 @@ public class Score : MonoBehaviour {
 	public int score = 0;
 	public Text text;
 
+
 	// Use this for initialization
 	void Start () {
 		score = 0;
@@ -19,6 +20,6 @@ public class Score : MonoBehaviour {
 	}
 
 	void UpdateDisplay () {
-		text.text = "Score : " + score;
+		text.text = "Score: " + score;
 	}
 }

@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
 	public Score score;
 
 	void Awake () {
-		score = GameObject.FindGameObjectWithTag ("Score").GetComponent<Score>();
+		score = GameObject.FindGameObjectWithTag ("Score").GetComponent<Score> ();
 	}
 
 	// Use this for initialization
@@ -29,8 +29,6 @@ public class Projectile : MonoBehaviour {
 			score.Add (100);
 			Die ();
 		}
-
-		Debug.Log ("Collison Detected" + other.tag);
 	}
 
 	void Die () {
