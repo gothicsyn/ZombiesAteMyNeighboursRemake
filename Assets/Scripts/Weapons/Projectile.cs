@@ -5,6 +5,12 @@ public class Projectile : MonoBehaviour {
 	public float timer = 3f;
 	public float speed = 4f;
 
+	public Score score;
+
+	void Awake () {
+		score = GameObject.FindGameObjectWithTag ("Score").GetComponent<Score>();
+	}
+
 	// Use this for initialization
 	void Start () {
 		Invoke ("Die", timer);
@@ -20,6 +26,7 @@ public class Projectile : MonoBehaviour {
 			CancelInvoke ();
 			Destroy (other.gameObject);
 			Debug.Log("Point Call + 100 Zombie");
+			score.Add (100);
 			Die ();
 		}
 

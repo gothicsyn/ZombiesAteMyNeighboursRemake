@@ -1,0 +1,15 @@
+**********************************************
+**********************************************
+****** Zombies Ate My Neighbours Remake ******
+**************** Update Notes ****************
+**********************************************
+**********************************************
+
+Version 0.5
+
+Added : Shooting
+Added : Enemy Kill
+Added : Score System
+
+Updated : Shooting
+Updated : Scoring
