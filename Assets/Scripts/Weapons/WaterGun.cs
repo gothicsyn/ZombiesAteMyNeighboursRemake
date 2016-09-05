@@ -19,6 +19,6 @@ public class WaterGun : MonoBehaviour {
 	}
 
 	void Shoot () {
-		Instantiate (prefab, muzzle.position, Quaternion.identity);
+		Instantiate (prefab, muzzle.position, transform.rotation);
 	}
 }
