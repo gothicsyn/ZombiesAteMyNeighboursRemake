@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AI_Zombie : MonoBehaviour {
 
-	public NavMeshAgent agent;
+	public UnityEngine.AI.NavMeshAgent agent;
 	public Transform target;
 
 	void Awake () {
